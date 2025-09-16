@@ -43,7 +43,8 @@ app.use((err, req, res, next)=>{
 const PORT = process.env.PORT || 3000
 connectDB().then(()=>{
 app.use('/dashboard', dashboardRoutes)
-  app.listen(PORT, ()=> console.log('✅ Backend escuchando en puerto', PORT))
+  //app.listen(PORT, ()=> console.log('✅ Backend escuchando en puerto', PORT))
+    app.listen(PORT, ()=> console.log(`API listening on :${PORT}`))
 }).catch(err => {
   console.error('❌ No se pudo conectar a MongoDB', err)
   process.exit(1)
